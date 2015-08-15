@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AAMrec</class>
+ <widget class="QMainWindow" name="AAMrec">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AAMrec</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="CVImageWidget" name="outImage" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>640</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>AAM &amp;Rec</string>
+    </property>
+    <addaction name="actionLoad_Training_Data"/>
+    <addaction name="actionLoad_Image"/>
+    <addaction name="actionSave_Data"/>
+   </widget>
+   <widget class="QMenu" name="menuFitting">
+    <property name="title">
+     <string>Fi&amp;tting</string>
+    </property>
+    <addaction name="actionBuild_AAM"/>
+    <addaction name="separator"/>
+    <addaction name="actionReset_Shape"/>
+    <addaction name="actionFit_Image"/>
+    <addaction name="actionExecute_fitting_step"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Setti&amp;ngs</string>
+    </property>
+    <addaction name="actionIC_AAM"/>
+    <addaction name="actionSIC_AAM"/>
+    <addaction name="actionRobust_AAM"/>
+    <addaction name="actionWSIC_AAM"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuFitting"/>
+   <addaction name="menuSettings"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionLoad_Image">
+   <property name="text">
+    <string>Load &amp;Image</string>
+   </property>
+   <property name="shortcut">
+    <string>I</string>
+   </property>
+  </action>
+  <action name="actionReset_Shape">
+   <property name="text">
+    <string>&amp;Reset Shape</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionFit_Image">
+   <property name="text">
+    <string>&amp;Fit Image</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
+   </property>
+  </action>
+  <action name="actionExecute_fitting_step">
+   <property name="text">
+    <string>&amp;Execute fitting step</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
+  <action name="actionSave_Data">
+   <property name="text">
+    <string>&amp;Save Data</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionLoad_Training_Data">
+   <property name="text">
+    <string>&amp;Load Training Data</string>
+   </property>
+   <property name="shortcut">
+    <string>T</string>
+   </property>
+  </action>
+  <action name="actionBuild_AAM">
+   <property name="text">
+    <string>&amp;Build AAM</string>
+   </property>
+   <property name="shortcut">
+    <string>B</string>
+   </property>
+  </action>
+  <action name="actionIC_AAM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;IC-AAM</string>
+   </property>
+  </action>
+  <action name="actionSIC_AAM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;SIC-AAM</string>
+   </property>
+  </action>
+  <action name="actionRobust_AAM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Robust-AAM</string>
+   </property>
+  </action>
+  <action name="actionWSIC_AAM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>WSIC-AAM</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CVImageWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">../AAMlib/cvimagewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
