@@ -11,6 +11,8 @@
 #include "../AAMlib/sicaam.h"
 #include "../AAMlib/fastsicaam.h"
 #include "../AAMlib/wsicaam.h"
+#include "../AAMlib/fourieraam.h"
+
 
 using namespace std;
 using namespace cv;
@@ -49,6 +51,7 @@ private:
     SICAAM sicaam;
     FastSICAAM fsicaam;
     WSICAAM wsicaam;
+    FourierAAM faam;
 
     Mat fittingImage;
     string imageName;

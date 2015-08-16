@@ -66,6 +66,7 @@
     <addaction name="actionSIC_AAM"/>
     <addaction name="actionRobust_AAM"/>
     <addaction name="actionWSIC_AAM"/>
+    <addaction name="actionFourier_AAM"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFitting"/>
@@ -157,7 +158,15 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>WSIC-AAM</string>
+    <string>&amp;WSIC-AAM</string>
+   </property>
+  </action>
+  <action name="actionFourier_AAM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Fourier-AAM</string>
    </property>
   </action>
  </widget>

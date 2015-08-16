@@ -21,6 +21,7 @@ AAMrec::AAMrec(QWidget *parent) :
     connect(ui->actionSIC_AAM, SIGNAL(triggered()), SLOT(changeUsedAAM()));
     connect(ui->actionRobust_AAM, SIGNAL(triggered()), SLOT(changeUsedAAM()));
     connect(ui->actionWSIC_AAM, SIGNAL(triggered()), SLOT(changeUsedAAM()));
+    connect(ui->actionFourier_AAM, SIGNAL(triggered()), SLOT(changeUsedAAM()));
 
     string filePath = "/home/lucas/Dropbox/Diplomarbeit/Code/trainingdata/";
 
@@ -69,9 +70,12 @@ AAMrec::AAMrec(QWidget *parent) :
     loadTrainingData(filePath+"Rafd090_07_Caucasian_male_sad_frontal.xml");
     loadTrainingData(filePath+"Rafd090_07_Caucasian_male_surprised_frontal.xml");
 
+    //raam.loadDataFromFile("/home/lucas/test.aam");
+
     this->setUsedAAM(&icaam);
     this->ui->actionIC_AAM->setChecked(true);
     this->buildAAM();
+
 }
 
 AAMrec::~AAMrec()
@@ -140,6 +144,7 @@ void AAMrec::changeUsedAAM() {
     ui->actionSIC_AAM->setChecked(false);
     ui->actionRobust_AAM->setChecked(false);
     ui->actionWSIC_AAM->setChecked(false);
+    ui->actionFourier_AAM->setChecked(false);
 
     if(s == ui->actionIC_AAM) {
         ui->actionIC_AAM->setChecked(true);
@@ -153,6 +158,9 @@ void AAMrec::changeUsedAAM() {
     } else if(s == ui->actionWSIC_AAM) {
         ui->actionWSIC_AAM->setChecked(true);
         this->setUsedAAM(&wsicaam);
+    } else if(s == ui->actionFourier_AAM) {
+        ui->actionFourier_AAM->setChecked(true);
+        this->setUsedAAM(&faam);
     }
 
     if(!this->fittingImage.empty()) {
